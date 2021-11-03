@@ -4,7 +4,7 @@ import java.util.function.BooleanSupplier;
 public class IPvalidator {
 
 	public boolean ValidateIp4Address(String ipString) {
-		if(ipString=="") {
+		if(hasThreeDots(ipString) && firstNumberInRange1_254(ipString)) {
 			return false;
 		}
 		return true;
@@ -18,5 +18,9 @@ public class IPvalidator {
 
 	public int[] getNumbers(String string) {
 		return Arrays.stream(string.split("\\.")).mapToInt(Integer::parseInt).toArray();
+	}
+	
+	private boolean firstNumberInRange1_254(String ipString) {
+		return getNumbers(ipString)[0]>0 && getNumbers(ipString)[0]<255;
 	}
 }
