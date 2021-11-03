@@ -31,4 +31,9 @@ class IPvalidatorTests {
 		int[] expected = {1,2,3,4};
 		assertArrayEquals(expected,validator.getNumbers("1.2.3.4"));
 	}
+	@Test
+	void ShouldBe_False_GivenIpstartingwithzero() {
+		IPvalidator validator = new IPvalidator();
+		assertFalse(validator.ValidateIp4Address("0.2.3.4"));
+	}
 }
