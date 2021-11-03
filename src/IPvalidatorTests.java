@@ -19,5 +19,10 @@ class IPvalidatorTests {
 		IPvalidator validator = new IPvalidator();
 		assertTrue(validator.ValidateIp4Address(""));
 	}
-
+	
+	@Test
+	void ShouldBe_True_GivenStringWithThreeDots() {
+		IPvalidator validator = new IPvalidator();
+		assertTrue(validator.ValidateIp4Address("1.2.3.1"));
+	}
 }
