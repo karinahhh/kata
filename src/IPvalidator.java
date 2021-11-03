@@ -9,5 +9,8 @@ public class IPvalidator {
 		return true;
 	}
 
-	
+	private boolean hasThreeDots(String ipString) {
+
+		return ipString.chars().filter(c->c=='.').count()==3;
+	}
 }
